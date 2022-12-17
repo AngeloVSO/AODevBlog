@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AODevBlog.Web", "AODevBlog.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AODevBlog.Models", "AODevBlog.Models\AODevBlog.Models.csproj", "{8DA715CC-9319-4FB9-B656-40067B7597D3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AODevBlog.Repository", "AODevBlog.Repository\AODevBlog.Repository.csproj", "{97544856-B73C-4940-8044-32850A5653C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8DA715CC-9319-4FB9-B656-40067B7597D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DA715CC-9319-4FB9-B656-40067B7597D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DA715CC-9319-4FB9-B656-40067B7597D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97544856-B73C-4940-8044-32850A5653C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97544856-B73C-4940-8044-32850A5653C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97544856-B73C-4940-8044-32850A5653C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97544856-B73C-4940-8044-32850A5653C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
