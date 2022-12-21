@@ -36,9 +36,9 @@ namespace AODevBlog.Repository.BlogRepository
             return affectedRow;
         }
 
-        public async Task<PageResults<Blog>> GetAllAsync(BlogPaging blogPaging)
+        public async Task<PagedResults<Blog>> GetAllAsync(BlogPaging blogPaging)
         {
-            var results = new PageResults<Blog>();
+            var results = new PagedResults<Blog>();
 
             using (var connection = new SqlConnection(_config.GetConnectionString("DefaultConnection")))
             {

@@ -9,7 +9,7 @@ namespace AODevBlog.Repository.BlogRepository
     public interface IBlogRepository
     {
         public Task<Blog> UpsertAsync(BlogCreate blogCreate, int applicationUserId);
-        public Task<PageResults<Blog>> GetAllAsync(BlogPaging blogPaging);
+        public Task<PagedResults<Blog>> GetAllAsync(BlogPaging blogPaging);
         public Task<Blog> GetAsync(int blogId);
         public Task<List<Blog>> GetAllByUserIdAsync(int applicationUserId);
         public Task<List<Blog>> GetAllFamousAsync();
