@@ -1,5 +1,6 @@
 ﻿using AODevBlog.Models.Account;
 using AODevBlog.Repository;
+using AODevBlog.Repository.AccountRepository;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Threading;

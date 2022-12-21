@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace AODevBlog.Repository.PhotoRepository
 {
-    class PhotoRepository : IPhotoRepository
+    public class PhotoRepository : IPhotoRepository
     {
         private readonly IConfiguration _config;
 

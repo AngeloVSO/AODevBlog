@@ -4,7 +4,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace AODevBlog.Repository
+namespace AODevBlog.Repository.AccountRepository
 {
     public interface IAccountRepository
     {

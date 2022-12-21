@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace AODevBlog.Repository
+namespace AODevBlog.Repository.AccountRepository
 {
     public class AccountRepository : IAccountRepository
     {
