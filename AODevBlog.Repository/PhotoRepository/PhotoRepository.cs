@@ -88,7 +88,7 @@ namespace AODevBlog.Repository.PhotoRepository
 
                 newPhotoId = await connection.ExecuteScalarAsync<int>(
                     "Photo_Insert",
-                    new { Photo = dataTable.AsTableValuedParameter("dbo.PhotoType") },
+                    new { Photo = dataTable.AsTableValuedParameter("dbo.PhotoType"), ApplicationUserId = applicationuUserId },
                     commandType: CommandType.StoredProcedure);
             }
 

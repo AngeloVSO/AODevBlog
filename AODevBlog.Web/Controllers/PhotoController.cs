@@ -95,7 +95,7 @@ namespace AODevBlog.Web.Controllers
             }
             else
             {
-                return BadRequest("Photo was not uploaded by the current user.");
+                return BadRequest("Photo was not uploaded by the current user or not exist.");
             }
         }
 
