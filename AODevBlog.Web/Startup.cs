@@ -38,7 +38,7 @@ namespace AODevBlog.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<CloudinaryOptions>(Configuration.GetSection("CloudinaryOpetions"));
+            services.Configure<CloudinaryOptions>(Configuration.GetSection("CloudinaryOptions"));
 
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IPhotoService, PhotoService>();
@@ -78,6 +78,7 @@ namespace AODevBlog.Web
                             ValidateLifetime = true,
                             ValidateIssuerSigningKey = true,
                             ValidIssuer = Configuration["Jwt:Issuer"],
+                            ValidAudience = Configuration["Jwt:Issuer"],
                             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"])),
                             ClockSkew = TimeSpan.Zero
                         };

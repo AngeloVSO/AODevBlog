@@ -34,7 +34,7 @@ namespace AODevBlog.Repository.AccountRepository
 
             dataTable.Rows.Add(
                 user.Username,
-                user.NormalizadUsername,
+                user.NormalizedUsername,
                 user.Email,
                 user.NormalizedEmail,
                 user.Fullname,

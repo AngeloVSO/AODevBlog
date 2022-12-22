@@ -40,7 +40,7 @@ namespace AODevBlog.Web.Controllers
 
             var blog = await _blogRepository.UpsertAsync(blogCreate, applicationUserId);
 
-            return Created("Blog", blog);
+            return Ok(blog);
         }
 
         [HttpGet]

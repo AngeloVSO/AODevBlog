@@ -64,7 +64,7 @@ namespace AODevBlog.Identity
 
         public Task<string> GetNormalizedUserNameAsync(ApplicationUserIdentity user, CancellationToken cancellationToken)
         {
-            return Task.FromResult(user.NormalizadUsername);
+            return Task.FromResult(user.NormalizedUsername);
         }
 
         public Task<string> GetPasswordHashAsync(ApplicationUserIdentity user, CancellationToken cancellationToken)
@@ -106,7 +106,7 @@ namespace AODevBlog.Identity
 
         public Task SetNormalizedUserNameAsync(ApplicationUserIdentity user, string normalizedName, CancellationToken cancellationToken)
         {
-            user.NormalizadUsername = normalizedName;
+            user.NormalizedUsername = normalizedName;
             return Task.FromResult(0);
         }
 

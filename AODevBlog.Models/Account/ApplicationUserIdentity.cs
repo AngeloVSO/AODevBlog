@@ -8,7 +8,7 @@ namespace AODevBlog.Models.Account
     {
         public int ApplicationUserId { get; set; }
         public string Username { get; set; }
-        public string NormalizadUsername { get; set; }
+        public string NormalizedUsername { get; set; }
         public string Email { get; set; }
         public string NormalizedEmail { get; set; }
         public string Fullname { get; set; }
