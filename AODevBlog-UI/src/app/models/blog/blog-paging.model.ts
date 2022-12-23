@@ -1,3 +1,3 @@
-export class BlogPaging<T> {
+export class BlogPaging {
   constructor(public page: number, public pageSize: number) {}
 }
