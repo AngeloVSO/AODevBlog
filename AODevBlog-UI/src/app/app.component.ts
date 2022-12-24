@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AODevBlog-UI';
-  characterLimit = 7;
+  private dateNow = new Date(Date.now());
+  currentYear = this.dateNow.getFullYear();
 }

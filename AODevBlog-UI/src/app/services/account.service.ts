@@ -57,6 +57,10 @@ export class AccountService {
     this.currentUserSubject$.next(null);
   }
 
+  isLoggedIn() {
+    return this.currentUserValue && this.currentUserValue.token;
+  }
+
   public get currentUserValue(): ApplicationUser {
     return this.currentUserSubject$.value;
   }

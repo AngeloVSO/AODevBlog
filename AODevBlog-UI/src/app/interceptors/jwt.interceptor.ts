@@ -18,7 +18,7 @@ export class JwtInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
     const currentUser = this.accountService.currentUserValue;
-    const isLoggedIn = currentUser && currentUser.token;
+    const isLoggedIn = this.accountService.isLoggedIn();
     const isApiUrl = request.url.startsWith(environment.webApi);
 
     if (isLoggedIn && isApiUrl) {

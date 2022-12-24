@@ -1,15 +1,21 @@
+import { Router } from '@angular/router';
+import { AccountService } from './../../services/account.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+  isCollapsed = true;
 
-  constructor() { }
+  constructor(public accountService: AccountService, private router: Router) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  logout() {
+    this.accountService.logout();
+    this.router.navigate(['/']);
   }
-
 }
