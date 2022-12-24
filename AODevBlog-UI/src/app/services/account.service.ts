@@ -15,7 +15,7 @@ export class AccountService {
 
   constructor(private http: HttpClient) {
     this.currentUserSubject$ = new BehaviorSubject<ApplicationUser>(
-      JSON.parse(localStorage.getItem('aodevBlog-currentuser')!)
+      JSON.parse(localStorage.getItem('aodevBlog-currentUser')!)
     );
   }
 
@@ -58,7 +58,7 @@ export class AccountService {
   }
 
   isLoggedIn() {
-    return this.currentUserValue && this.currentUserValue.token;
+    return !!this.currentUserValue && !!this.currentUserValue.token;
   }
 
   public get currentUserValue(): ApplicationUser {
