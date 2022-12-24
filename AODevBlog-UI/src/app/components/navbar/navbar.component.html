@@ -21,7 +21,7 @@
       id="collapseBasic"
       [collapse]="isCollapsed"
     >
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav ms-auto">
         <li class="nav-item">
           <a class="nav-link" routerLink="/blogs" routerLinkActive="active">
             Blogs
@@ -39,10 +39,10 @@
           id="button-animated"
           dropdownToggle
           type="button"
-          class="btn btn primary dropdown-toggle"
+          class="btn btn-primary dropdown-toggle"
           aria-controls="dropdown-animated"
         >
-          Welcome {{ accountService.currentUserValue.username }}!
+          Welcome {{ accountService.currentUserValue.userName }}!
           <span class="caret"></span>
         </button>
 
@@ -54,24 +54,14 @@
           aria-labelledby="button-animated"
         >
           <li role="menuitem">
-            <a
-              class="dropdown-item"
-              routerLink="/photo-album"
-              routerLinkActive="active"
-              >Photo Album</a
-            >
+            <a class="dropdown-item" routerLink="/photo-album">Photo Album</a>
           </li>
           <li role="menuitem">
-            <a
-              class="dropdown-item"
-              routerLink="/dashboard"
-              routerLinkActive="active"
-              >Dashboard</a
-            >
+            <a class="dropdown-item" routerLink="/dashboard">Dashboard</a>
           </li>
           <li role="divider dropdown-divider"></li>
           <li role="menuitem">
-            <a class="dropdown-item" (click)="logout()">Logout</a>
+            <a class="dropdown-item" routerLink (click)="logout()">Logout</a>
           </li>
         </ul>
       </div>

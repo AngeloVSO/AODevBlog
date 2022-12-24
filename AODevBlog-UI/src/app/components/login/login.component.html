@@ -1,1 +1,66 @@
-<p>login works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3 mt-5">
+      <h3 class="text-dark">Login</h3>
+      <p class="text-dark">Get to your dashboard and start blogging</p>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <input
+            formControlName="username"
+            class="form-control form-control-lg"
+            placeholder="Username"
+            type="text"
+            [ngClass]="{
+              'is-invalid': hasErrors('username') && isTouched('username'),
+              'is-valid': !hasErrors('username') && isTouched('username')
+            }"
+          />
+          <em *ngIf="hasError('username', 'required')" class="invalid-feedback">
+            Username required
+          </em>
+          <em
+            *ngIf="
+              hasError('username', 'minlength') ||
+              hasError('username', 'maxlength')
+            "
+            class="invalid-feedback"
+          >
+            Username must be between 5-20 characters
+          </em>
+        </div>
+
+        <div class="mb-3">
+          <input
+            formControlName="password"
+            class="form-control form-control-lg"
+            placeholder="Password"
+            type="password"
+            [ngClass]="{
+              'is-invalid': hasErrors('password') && isTouched('password'),
+              'is-valid': !hasErrors('password') && isTouched('password')
+            }"
+          />
+          <em *ngIf="hasError('password', 'required')" class="invalid-feedback">
+            Password required
+          </em>
+          <em
+            *ngIf="
+              hasError('password', 'minlength') ||
+              hasError('password', 'maxlength')
+            "
+            class="invalid-feedback"
+          >
+            Password must be between 10-50 characters
+          </em>
+        </div>
+
+        <div class="d-grid gap-2">
+          <button class="btn btn-primary" [disabled]="!loginForm.valid">
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
