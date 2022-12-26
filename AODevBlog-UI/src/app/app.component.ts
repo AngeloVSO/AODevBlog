@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'AODevBlog-UI';
   private dateNow = new Date(Date.now());
   currentYear = this.dateNow.getFullYear();
 }

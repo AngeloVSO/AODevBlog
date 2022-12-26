@@ -1,1 +1,127 @@
-<p>register works!</p>
+<h3 class="text-dark">Don't Have An Account?</h3>
+<p class="text-dark">Just fill out the form and register</p>
+
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <div class="form-group mb-3">
+    <input
+      formControlName="fullname"
+      class="form-control form-control-lg"
+      placeholder="Full Name"
+      type="text"
+      [ngClass]="{
+        'is-invalid': hasErrors('fullname') && isTouched('fullname'),
+        'is-valid': !hasErrors('fullname') && isTouched('fullname')
+      }"
+    />
+    <em
+      *ngIf="
+        hasError('fullname', 'minlength') || hasError('fullname', 'maxlength')
+      "
+      class="invalid-feedback"
+    >
+      Full name must be between 10-30 characters
+    </em>
+  </div>
+
+  <div class="form-group mb-3">
+    <input
+      formControlName="username"
+      class="form-control form-control-lg"
+      placeholder="Username"
+      type="text"
+      [ngClass]="{
+        'is-invalid': hasErrors('username') && isTouched('username'),
+        'is-valid': !hasErrors('username') && isTouched('username')
+      }"
+    />
+    <em *ngIf="hasError('username', 'required')" class="invalid-feedback">
+      Username is required
+    </em>
+    <em
+      *ngIf="
+        hasError('username', 'minlength') || hasError('username', 'maxlength')
+      "
+      class="invalid-feedback"
+    >
+      Username must be between 5-20 characters
+    </em>
+  </div>
+
+  <div class="form-group mb-3">
+    <input
+      formControlName="email"
+      class="form-control form-control-lg"
+      placeholder="Email"
+      type="text"
+      [ngClass]="{
+        'is-invalid': hasErrors('email') && isTouched('email'),
+        'is-valid': !hasErrors('email') && isTouched('email')
+      }"
+    />
+    <em *ngIf="hasError('email', 'required')" class="invalid-feedback">
+      Email is required
+    </em>
+    <em *ngIf="hasError('email', 'pattern')" class="invalid-feedback">
+      Invalid email format
+    </em>
+    <em *ngIf="hasError('email', 'maxlength')" class="invalid-feedback">
+      Can be at most 30 characters
+    </em>
+  </div>
+
+  <div class="form-group mb-3">
+    <input
+      formControlName="password"
+      class="form-control form-control-lg"
+      placeholder="Password"
+      type="password"
+      [ngClass]="{
+        'is-invalid': hasErrors('password') && isTouched('password'),
+        'is-valid': !hasErrors('password') && isTouched('password')
+      }"
+    />
+    <em *ngIf="hasError('password', 'required')" class="invalid-feedback">
+      Password is required
+    </em>
+    <em
+      *ngIf="
+        hasError('password', 'minlength') || hasError('password', 'maxlength')
+      "
+      class="invalid-feedback"
+    >
+      Password must be between 10-50 characters
+    </em>
+  </div>
+
+  <div class="form-group mb-3">
+    <input
+      formControlName="confirmPassword"
+      class="form-control form-control-lg"
+      placeholder="Confirm Password"
+      type="password"
+      [ngClass]="{
+        'is-invalid':
+          (formHasError('isMatching') || hasErrors('confirmPassword')) &&
+          isTouched('confirmPassword'),
+        'is-valid':
+          !formHasError('isMatching') &&
+          !hasErrors('confirmPassword') &&
+          isTouched('confirmPassword')
+      }"
+    />
+    <em
+      *ngIf="hasError('confirmPassword', 'required')"
+      class="invalid-feedback"
+    >
+      Confirm Password is required
+    </em>
+    <em *ngIf="formHasError('isMatching')" class="invalid-feedback">
+      Password do not match
+    </em>
+  </div>
+  <div class="d-grid gap-2">
+    <button class="btn btn-primary" [disabled]="!registerForm.valid">
+      Register
+    </button>
+  </div>
+</form>
