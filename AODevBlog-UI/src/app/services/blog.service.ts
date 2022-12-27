@@ -18,9 +18,7 @@ export class BlogService {
   }
 
   delete(blogId: number): Observable<number> {
-    return this.http.delete<number>(
-      `${environment.webApi}/BlogComment${blogId}`
-    );
+    return this.http.delete<number>(`${environment.webApi}/Blog/${blogId}`);
   }
 
   get(blogId: number): Observable<Blog> {
