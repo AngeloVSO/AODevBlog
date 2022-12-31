@@ -1,4 +1,4 @@
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BlogCreate } from './../../../models/blog/blog-create.model';
@@ -21,7 +21,6 @@ export class BlogEditComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private formBuilder: FormBuilder,
     private blogService: BlogService,
     private photoService: PhotoService,
@@ -128,11 +127,8 @@ export class BlogEditComponent implements OnInit {
       this.blogForm.get('photoId')?.value
     );
 
-    console.log(blogCreate);
-
     this.blogService.create(blogCreate).subscribe((createdBlog) => {
-      // this.updateForm(createdBlog);
-      this.router.navigate(['/dashboard']);
+      this.updateForm(createdBlog);
       this.toastrService.info('Blog saved.');
     });
   }
