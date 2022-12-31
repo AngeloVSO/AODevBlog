@@ -31,9 +31,9 @@ namespace AODevBlog.Web.Controllers
         {
             int applicationUserId = int.Parse(User.Claims.First(i => i.Type == JwtRegisteredClaimNames.NameId).Value);
 
-            if (blogCreate.Photoid.HasValue)
+            if (blogCreate.PhotoId.HasValue)
             {
-                var photo = await _photoRepository.GetAsync(blogCreate.Photoid.Value);
+                var photo = await _photoRepository.GetAsync(blogCreate.PhotoId.Value);
 
                 if (photo.ApplicationUserId != applicationUserId) return BadRequest("You did not upload the photo");
             }

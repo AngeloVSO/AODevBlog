@@ -81,7 +81,7 @@ namespace AODevBlog.Web.Controllers
             {
                 var blogs = await _blogRepository.GetAllByUserIdAsync(applicationUserId);
 
-                var usedInBlog = blogs.Any(b => b.Photoid == photoId);
+                var usedInBlog = blogs.Any(b => b.PhotoId == photoId);
 
                 if (usedInBlog) return BadRequest("Cannot remove photo as it is being used in published blog(s).");
 

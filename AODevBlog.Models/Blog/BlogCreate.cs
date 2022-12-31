@@ -18,7 +18,7 @@ namespace AODevBlog.Models.Blog
         [MinLength(300, ErrorMessage = "Precisa ter 300-3000 caracteres")]
         [MaxLength(3000, ErrorMessage = "Precisa ter 300-3000 caracteres")]
         public string Content { get; set; }
-        public int? Photoid { get; set; }
+        public int? PhotoId { get; set; }
 
     }
 }

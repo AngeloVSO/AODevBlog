@@ -62,7 +62,7 @@ namespace AODevBlog.Repository.PhotoRepository
             {
                 await connection.OpenAsync();
 
-                photo = await connection.QueryFirstAsync<Photo>(
+                photo = await connection.QueryFirstOrDefaultAsync<Photo>(
                     "Photo_Get",
                     new { PhotoId = photoId },
                     commandType: CommandType.StoredProcedure);

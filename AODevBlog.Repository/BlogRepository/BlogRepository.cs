@@ -119,7 +119,7 @@ namespace AODevBlog.Repository.BlogRepository
             dataTable.Columns.Add("Content", typeof(string));
             dataTable.Columns.Add("PhotoId", typeof(int));
 
-            dataTable.Rows.Add(blogCreate.BlogId, blogCreate.Title, blogCreate.Content, blogCreate.Photoid);
+            dataTable.Rows.Add(blogCreate.BlogId, blogCreate.Title, blogCreate.Content, blogCreate.PhotoId);
 
             int? newBlogId;
 
