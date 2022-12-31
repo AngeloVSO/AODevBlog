@@ -97,6 +97,7 @@ namespace AODevBlog.Web.Controllers
             {
                 return BadRequest("Photo was not uploaded by the current user or not exist.");
             }
+
         }
 
     }

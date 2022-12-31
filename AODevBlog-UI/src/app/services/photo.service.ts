@@ -23,6 +23,6 @@ export class PhotoService {
   }
 
   delete(photoId: number): Observable<number> {
-    return this.http.get<number>(`${environment.webApi}/Photo/${photoId}`);
+    return this.http.delete<number>(`${environment.webApi}/Photo/${photoId}`);
   }
 }

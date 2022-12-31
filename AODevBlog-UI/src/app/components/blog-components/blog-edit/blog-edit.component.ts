@@ -128,6 +128,8 @@ export class BlogEditComponent implements OnInit {
       this.blogForm.get('photoId')?.value
     );
 
+    console.log(blogCreate);
+
     this.blogService.create(blogCreate).subscribe((createdBlog) => {
       // this.updateForm(createdBlog);
       this.router.navigate(['/dashboard']);
