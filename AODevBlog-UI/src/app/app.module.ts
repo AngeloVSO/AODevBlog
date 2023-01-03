@@ -10,6 +10,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
@@ -68,6 +69,7 @@ import { ErrorInterceptor } from './interceptors/error.interceptor';
     CollapseModule.forRoot(),
     TypeaheadModule.forRoot(),
     CarouselModule.forRoot(),
+    PaginationModule.forRoot(),
   ],
   providers: [
     HttpClient,
