@@ -1,1 +1,20 @@
-<p>famous-blogs works!</p>
+<div class="container">
+  <div class="d-flex justify-content-center">
+    <h1 class="display-4 mt-5">Most Discussed Blogs</h1>
+  </div>
+</div>
+
+<ng-container *ngIf="famousBlogs$ | async as famousBlogs">
+  <div class="container card-columns mt-5">
+    <div class="row row-cols-sm-1 row-cols-md-3 g-5">
+      <app-blog-card *ngFor="let blog of famousBlogs">
+        [blog]="blog"></app-blog-card
+      >
+    </div>
+  </div>
+  <div *ngIf="!famousBlogs.length" class="mt-4">
+    <div class="d-flex justify-content-center">
+      <h3 class="text-dark">There are no blogs being discussed...</h3>
+    </div>
+  </div>
+</ng-container>
