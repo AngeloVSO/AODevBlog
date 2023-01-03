@@ -1,1 +1,25 @@
-<p>blog-card works!</p>
+<div class="card">
+  <img
+    *ngIf="photoUrlExist"
+    src="{{ blogPhotoUrl }}"
+    class="card-img-top img-fluid"
+    alt="Blog Image"
+  />
+  <div class="card-body">
+    <h4 class="card-title">
+      {{ blog.title }}
+    </h4>
+    <p *ngIf="photoUrlExist" class="card-text">
+      {{ blog.content | summary : 150 }}
+    </p>
+    <p *ngIf="!photoUrlExist" class="card-text">
+      {{ blog.content | summary : 300 }}
+    </p>
+    <button
+      class="btn btn-xs bg-primary text-light"
+      (click)="readMore(blog.blogId)"
+    >
+      Read More
+    </button>
+  </div>
+</div>
