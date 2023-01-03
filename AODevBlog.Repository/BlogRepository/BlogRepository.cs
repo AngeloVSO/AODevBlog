@@ -48,7 +48,7 @@ namespace AODevBlog.Repository.BlogRepository
                     "Blog_GetAll",
                     new
                     {
-                        Offset = (blogPaging.Page = 1 - 1) * blogPaging.PageSize,
+                        Offset = (blogPaging.Page - 1) * blogPaging.PageSize,
                         PageSize = blogPaging.PageSize
                     }, 
                     commandType: CommandType.StoredProcedure))
